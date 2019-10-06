@@ -1,8 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+$color: #402f91;
+* {
+  font-family: "Lato", sans-serif;
+}
 body {
   padding: 0;
   margin: 0;
-  #timer {
-    font-size: 40px;
+  .container {
+    padding: 100px 200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    h1 {
+      font-size: 50px;
+      font-weight: 900;
+      color: $color;
+    }
+  }
+  .content {
+    width: 50%;
+    input {
+      padding: 10px 20px;
+      font-size: 28px;
+      outline: none;
+      border-radius: 5px;
+      color: $color;
+      border: 1px solid $color;
+    }
+    .resultButton {
+      padding: 20px 0;
+      button {
+        padding: 10px 20px;
+        font-size: 24px;
+        text-transform: uppercase;
+        background: $color;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid $color;
+        &:hover {
+          background: #fff;
+          color: $color;
+          border: 1px solid $color;
+          cursor: pointer;
+          outline: none;
+        }
+      }
+    }
+    .showResult {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 2px solid $color;
+      div {
+        padding-right: 20px;
+        // text-align: center;
+        color: $color;
+        font-size: 60px;
+        font-weight: 900;
+        text-transform: uppercase;
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .image {
+    width: 50%;
+    top: 0;
+    img {
+      width: 100%;
+    }
   }
 }

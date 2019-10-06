@@ -1,10 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+* {
+  font-family: "Lato", sans-serif;
+}
+
 body {
   padding: 0;
   margin: 0;
 }
 
-body #timer {
-  font-size: 40px;
+body .container {
+  padding: 100px 200px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .container h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #402f91;
+}
+
+body .content {
+  width: 50%;
+}
+
+body .content input {
+  padding: 10px 20px;
+  font-size: 28px;
+  outline: none;
+  border-radius: 5px;
+  color: #402f91;
+  border: 1px solid #402f91;
+}
+
+body .content .resultButton {
+  padding: 20px 0;
+}
+
+body .content .resultButton button {
+  padding: 10px 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+  background: #402f91;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #402f91;
+}
+
+body .content .resultButton button:hover {
+  background: #fff;
+  color: #402f91;
+  border: 1px solid #402f91;
+  cursor: pointer;
+  outline: none;
+}
+
+body .content .showResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-bottom: 2px solid #402f91;
+}
+
+body .content .showResult div {
+  padding-right: 20px;
+  color: #402f91;
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body .content .showResult div p {
+  font-size: 24px;
+}
+
+body .image {
+  width: 50%;
+  top: 0;
+}
+
+body .image img {
+  width: 100%;
 }
 /*# sourceMappingURL=app.css.map */

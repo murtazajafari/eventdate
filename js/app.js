@@ -31,10 +31,10 @@ function showResult() {
     min = min < 10 ? "0" + min : min;
     sec = sec < 10 ? "0" + sec : sec;
 
-    document.getElementById("days").innerHTML = days + " Days";
-    document.getElementById("hrs").innerHTML = hrs + " Hours";
-    document.getElementById("min").innerHTML = min + " Minutes";
-    document.getElementById("sec").innerHTML = sec + " Seconds";
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hrs").innerHTML = hrs;
+    document.getElementById("min").innerHTML = min;
+    document.getElementById("sec").innerHTML = sec;
     setInterval(countDown, 1000);
   }
 

@@ -8,16 +8,44 @@
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body>
-    <!-- datepicker -->
-    <button type="button" onclick="showResult()">Click</button>
-    <!-- Datepicker v2 -->
-    <input type="date" id="datepicker" name="datepicker" />
-    <!-- Result -->
-    <div id="timer">
-      <div id="days"></div>
-      <div id="hrs"></div>
-      <div id="min"></div>
-      <div id="sec"></div>
+    <div class="container">
+      <div class="content">
+        <h1>Pick your wanted event date</h1>
+        <div class="datePicker">
+          <input
+            type="date"
+            id="datepicker"
+            name="datepicker"
+            placeholder="2019 12 20"
+            value="2019 12 20"
+          />
+        </div>
+        <div class="resultButton">
+          <button type="button" onclick="showResult()">See Result</button>
+        </div>
+        <!-- Result -->
+        <div class="showResult">
+          <div>
+            <div id="days">00</div>
+            <p>Days</p>
+          </div>
+          <div>
+            <div id="hrs">00</div>
+            <p>Hours</p>
+          </div>
+          <div>
+            <div id="min">00</div>
+            <p>Minutes</p>
+          </div>
+          <div>
+            <div id="sec">00</div>
+            <p>Seconds</p>
+          </div>
+        </div>
+      </div>
+      <div class="image">
+        <img src="img/time.jpg" alt="" />
+      </div>
     </div>
     <script src="js/app.js"></script>
   </body>
