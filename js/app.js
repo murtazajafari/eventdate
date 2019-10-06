@@ -1,77 +1,42 @@
-var eventName, eventDate;
-var eventYear, eventMonth, eventDay;
+function showResult() {
+  var datepicker = document.getElementById("datepicker").value;
+  var newdatepicker = new Date(datepicker);
 
-function getInput() {
-  var valid = false;
-  eventName = prompt("Event Name", "My Event");
+  var eventYear = newdatepicker.getFullYear();
+  var eventMonth = newdatepicker.getMonth() + 1;
+  var eventDay = newdatepicker.getDate();
 
-  // validation
-  while (!valid) {
-    // year
-    while (!valid) {
-      eventYear = prompt("Event Year", "2019");
-      valid = eventYear > 0 && eventYear < 10000;
-    }
-    valid = false;
+  function countDown() {
+    var today = new Date();
 
-    // month
-    while (!valid) {
-      eventMonth = prompt("Event Month (1 to 12)", "1");
-      valid = eventMonth >= 1 && eventMonth <= 12;
-    }
-    valid = false;
+    var eventDate = new Date(
+      eventMonth + " " + eventDay + ", " + eventYear + " 00:00:00"
+    );
 
-    // day
-    while (!valid) {
-      eventDay = prompt("Event Day (1 to 31)", "1");
-      valid = eventDay >= 1 && eventDay <= 31;
-    }
-    valid = false;
+    var currentTime = today.getTime();
+    var eventTime = eventDate.getTime();
 
-    // make sure the event date is in the future
-    var currentDate = new Date();
-    eventDate = new Date(eventYear + "-" + eventMonth + "-" + eventDay);
-    valid = eventDate.getTime() - currentDate.getTime() > 0;
+    var remTime = eventTime - currentTime;
 
-    // show error alert
-    if (!valid) {
-      alert("The event date must be in the future!");
-    }
+    var sec = Math.floor(remTime / 1000);
+    var min = Math.floor(sec / 60);
+    var hrs = Math.floor(min / 60);
+    var days = Math.floor(hrs / 24);
+
+    hrs = hrs % 24;
+    min %= 60;
+    sec %= 60;
+
+    hrs = hrs < 10 ? "0" + hrs : hrs;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    document.getElementById("days").innerHTML = days + " Days";
+    document.getElementById("hrs").innerHTML = hrs + " Hours";
+    document.getElementById("min").innerHTML = min + " Minutes";
+    document.getElementById("sec").innerHTML = sec + " Seconds";
+    setInterval(countDown, 1000);
   }
 
-  // show countdown
-  displayCountdown();
-  setInterval(displayCountdown, 1000);
-}
-
-function displayCountdown() {
-  var currentDate = new Date();
-  var timeDiff = eventDate.getTime() - currentDate.getTime();
-  var secs = timeDiff / 1000;
-  var mins = secs / 60;
-  var hours = mins / 60;
-  var days = hours / 24;
-
-  // calculate the time remaining
-  var daysLeft = Math.floor(days);
-  var hoursLeft = Math.floor(hours % 24);
-  var minsLeft = Math.floor(mins % 60);
-  var secsLeft = Math.floor(secs % 60);
-
-  // output the heading and countdown timer
-  var myBox = document.getElementById("my_box");
-  myBox.innerHTML =
-    "<h3>Countdown to " +
-    eventName +
-    " (" +
-    eventDate.toLocaleDateString() +
-    ")</h3><h2>" +
-    daysLeft +
-    " days " +
-    hoursLeft +
-    " hours " +
-    minsLeft +
-    " mins " +
-    secsLeft +
-    " secs</h2>";
+  countDown();
 }
