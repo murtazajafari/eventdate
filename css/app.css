@@ -70,7 +70,6 @@ body .content .showResult {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border-bottom: 2px solid #402f91;
 }
 
 body .content .showResult div {

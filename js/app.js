@@ -1,3 +1,24 @@
+function disbalePastDate() {
+  var input = document.getElementById("datepicker");
+  var now = new Date();
+  var nowDay = new String(now.getDate() + 1); // Disable todays date as well
+  var nowMonth = new String(now.getMonth() + 1); //January is 0!
+  var nowYear = now.getFullYear();
+
+  if (nowDay.length < 2) {
+    nowDay = "0" + nowDay;
+  }
+  if (nowMonth.length < 2) {
+    nowMonth = "0" + nowMonth;
+  }
+
+  var todayDate = new String(nowYear + "-" + nowMonth + "-" + nowDay);
+
+  input.disabled = false;
+  input.setAttribute("min", todayDate);
+}
+disbalePastDate();
+
 function showResult() {
   var datepicker = document.getElementById("datepicker").value;
   var newdatepicker = new Date(datepicker);
